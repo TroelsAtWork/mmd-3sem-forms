@@ -1,4 +1,5 @@
 "use client";
+import postRecipe from "@/actions/action";
 const RecipeForm = () => {
   return (
     <form>
@@ -8,7 +9,7 @@ const RecipeForm = () => {
         placeholder="Opskriftens titel"
         className="border"
       />
-      <button type="submit" className="border">
+      <button formAction={postRecipe} type="submit" className="border">
         Opret opskrift
       </button>
     </form>
