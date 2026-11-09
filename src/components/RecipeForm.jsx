@@ -44,6 +44,17 @@ const RecipeForm = () => {
           className="border"
           onChange={handleChange}
         />
+        {state.fieldErrors?.cooktime?.[0] && (
+          <p className="text-red-700">{state.fieldErrors.cooktime[0]}</p>
+        )}
+        <input
+          type="number"
+          name="cooktime"
+          value={formFields.cooktime}
+          placeholder="Tilberedningstid"
+          className="border"
+          onChange={handleChange}
+        />
         <button formAction={postRecipeAction} type="submit" className="border">
           {isPending ? "submitting" : "Opret opskrift"}
         </button>

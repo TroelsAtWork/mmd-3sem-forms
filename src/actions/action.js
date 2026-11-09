@@ -4,8 +4,9 @@ import { Recipe } from "@/schemas/recipeSchema";
 
 const postRecipe = async (previousState, formData) => {
   try {
-    const { recipename: recipeName } = Recipe.parse({
+    const { recipename: recipeName, cooktime: cooktime } = Recipe.parse({
       recipename: formData.get("recipename"),
+      cooktime: formData.get("cooktime"),
     });
     const response = await fetch("https://dummyjson.com/recipes/add", {
       method: "POST",
