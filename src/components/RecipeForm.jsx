@@ -8,7 +8,7 @@ const RecipeForm = () => {
     success: null,
     message: "",
   });
-  console.log("state", state);
+
   const [formFields, setFormFields] = useState({ recipename: "" });
 
   useEffect(() => {
