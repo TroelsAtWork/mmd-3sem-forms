@@ -1,6 +1,6 @@
 "use client";
 import postRecipe from "@/actions/action";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { useState } from "react";
 
 const RecipeForm = () => {
@@ -8,7 +8,12 @@ const RecipeForm = () => {
     success: null,
     message: "",
   });
+  console.log("state", state);
   const [formFields, setFormFields] = useState({ recipename: "" });
+
+  useEffect(() => {
+    if (state.success) setFormFields({ recipename: "" });
+  }, [state]);
 
   function handleChange(event) {
     const { name, value } = event.target;
