@@ -9,3 +9,7 @@ export const Recipe = z.object({
       "Brug kun bogstaver og mellemrum i opskriftsnavnet.",
     ),
 });
+
+export const initialRecipe = {
+  recipename: "",
+};

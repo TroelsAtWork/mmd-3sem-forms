@@ -1,5 +1,6 @@
 "use client";
 import postRecipe from "@/actions/action";
+import { initialRecipe } from "@/schemas/recipeSchema";
 import { useActionState, useEffect } from "react";
 import { useState } from "react";
 
@@ -9,10 +10,10 @@ const RecipeForm = () => {
     message: "",
   });
 
-  const [formFields, setFormFields] = useState({ recipename: "" });
+  const [formFields, setFormFields] = useState(initialRecipe);
 
   useEffect(() => {
-    if (state.success) setFormFields({ recipename: "" });
+    if (state.success) setFormFields(initialRecipe);
   }, [state]);
 
   function handleChange(event) {
